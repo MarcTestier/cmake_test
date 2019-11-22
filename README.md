@@ -1,6 +1,13 @@
 # some_cmake_test
 
-## With colcon
+A small compilation of static analysis tools, unit test, fuzzing, documentation and logging tools linked to a CI server.
+
+## Static analysis (cppcheck, cpplint)
+
+TODO
+
+## Unit tests (Catch2)
+### With colcon
 We'll source ROS 2 but we actually only need colcon which is ROS 2 independent, it's just easy to source the whole thing.
 
 Source ROS 2 and build with tests:
@@ -15,7 +22,7 @@ cd <my_ws>/build/some_cmake_test/test
 ctest
 ```
 
-## With pure CMake
+### With pure CMake
 
 Should work with cmake, something like:
 ```
@@ -27,3 +34,25 @@ make
 cd test
 ctest
 ```
+
+## Fuzzing (?)
+
+TODO
+
+## Documentation (Doxygen)
+
+TODO
+
+## Logging (spdlog)
+
+TODO
+
+## CI (Jenkins CI)
+
+### Jenkins
+
+TODO
+
+### Code coverage
+
+TODO

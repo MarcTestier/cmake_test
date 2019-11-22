@@ -1,0 +1,4 @@
+[submodule "test/external_tools/Catch2"] 
+  path = test/external_tools/Catch2 
+  url = https://github.com/catchorg/Catch2.git
+
