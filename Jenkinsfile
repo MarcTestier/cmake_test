@@ -9,6 +9,7 @@ pipeline {
 		stage('Clone') {
 			steps {
                 echo 'Cloning...'
+                sh 'git submodule update --init --recursive'
 			}
 		}
 		stage('Build') {
