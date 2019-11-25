@@ -15,9 +15,6 @@ pipeline {
 		stage('Build') {
 			steps {
 				echo 'Building...'
-                sh 'pwd'
-                sh 'ls'
-                sh 'cd some_cmake_test'
                 sh 'mkdir build'
                 sh 'cd build'
                 sh 'cmake -DBUILD_TESTING=ON ..'
@@ -27,6 +24,8 @@ pipeline {
 		stage('Unit test') {
 			steps {
 				echo 'Testing...'
+                sh 'cd build/test'
+                sh 'ctest'
 			}
 		}
 		stage('Code coverage') {       
