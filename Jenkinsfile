@@ -15,6 +15,11 @@ pipeline {
 		stage('Build') {
 			steps {
 				echo 'Building...'
+                sh 'cd some_cmake_test'
+                sh 'mkdir build'
+                sh 'cd build'
+                sh 'cmake -DBUILD_TESTING=ON ..'
+                sh 'make'
 			}
 		}
 		stage('Unit test') {
