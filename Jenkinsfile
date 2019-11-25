@@ -28,6 +28,6 @@ node('master') {
 
         echo "Checking code coverage..."
         sh "cd some_cmake_test/build"
-        sh "$HOME_PATH/.local/bin/gcovr -r .. --xml-pretty -o code_coverage.xml"
+        sh "${HOME_PATH}/.local/bin/gcovr -r .. --xml-pretty -o code_coverage.xml"
     }
 }
