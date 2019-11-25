@@ -1,7 +1,7 @@
 node('master') {
     stage('Build') {
         echo 'Building...'
-        deleteDir
+        deleteDir()
         sh '''
         git clone --recurse-submodules -j4 https://github.com/MarcTestier/some_cmake_test
         cd some_cmake_test
