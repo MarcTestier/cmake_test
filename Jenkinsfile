@@ -1,8 +1,4 @@
 node('master') {
-    environment {
-        HOME_PATH = "/home/hopermf"
-    }
-
     stage('Clone') {
         echo 'Cloning...'
         deleteDir()
@@ -26,10 +22,14 @@ node('master') {
         '''
     }
     stage('Code coverage') {
+        environment {
+            HOME_PATH = "/home/hopermf"
+        }
+
         echo "Checking code coverage..."
         sh '''
         cd some_cmake_test/build
-        /home/hopermf/.local/bin/gcovr -r .. --xml-pretty -o code_coverage.xml
+        $HOME_PATH/.local/bin/gcovr -r .. --xml-pretty -o code_coverage.xml
         '''
     }
 }
