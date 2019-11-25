@@ -6,7 +6,7 @@ node('master') {
     }
     stage('Build') {
         echo 'Building...'
-        sh '''
+        sh '''\
         cd some_cmake_test
         mkdir build
         cd build
@@ -16,7 +16,7 @@ node('master') {
     }
     stage('Test') {
         echo 'Testing...'
-        sh '''
+        sh '''\
         cd some_cmake_test/build/test
         ctest
         '''
@@ -27,9 +27,7 @@ node('master') {
         }
 
         echo "Checking code coverage..."
-        sh '''
-        cd some_cmake_test/build
-        ${HOME_PATH}/.local/bin/gcovr -r .. --xml-pretty -o code_coverage.xml
-        '''
+        sh "cd some_cmake_test/build"
+        sh "$HOME_PATH/.local/bin/gcovr -r .. --xml-pretty -o code_coverage.xml"
     }
 }
