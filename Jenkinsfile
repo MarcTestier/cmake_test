@@ -21,4 +21,12 @@ node('master') {
         ctest
         '''
     }
+    stage('Code coverage') {
+        echo 'Checking code coverage...'
+        sh '''
+        cd some_cmake_test/build
+        gcovr -r . --xml-pretty
+        '''
+    }
+    
 }

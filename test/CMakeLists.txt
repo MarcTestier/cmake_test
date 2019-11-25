@@ -1,7 +1,9 @@
 cmake_minimum_required(VERSION 3.5)
 
-project(some_catch_test LANGUAGES CXX VERSION 0.0.1)
+# Adding code coverage
+add_compile_options(-fprofile-arcs -ftest-coverage -g -O0)
 
+# Adding unit tests
 file(GLOB_RECURSE unit_test_srcs "unit_test/*.cpp")
 add_subdirectory(external_tools/Catch2)
 add_executable(unit_test main.cpp ${unit_test_srcs})

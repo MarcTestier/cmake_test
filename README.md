@@ -53,4 +53,6 @@ Check the [Jenkinsfile](Jenkinsfile) in this repository and the [Jenkins CI serv
 
 ## Code coverage
 
-TODO
+```
+pip install gcovr
+```
