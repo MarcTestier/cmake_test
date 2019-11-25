@@ -1,6 +1,6 @@
 node('master') {
     environment {
-        HOME_PATH = '/home/hopermf'
+        HOME_PATH = "/home/hopermf"
     }
 
     stage('Clone') {
