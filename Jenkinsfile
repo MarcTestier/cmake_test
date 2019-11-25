@@ -37,6 +37,10 @@ pipeline {
 		stage('Code coverage') {       
 			steps {
 			    echo 'Checking code coverage...'
+                sh '''\
+                cd build
+                $HOME_PATH/.local/bin/gcovr -r .. --xml-pretty -o code_coverage.xml
+                '''
 			}        
 		}
 	}
