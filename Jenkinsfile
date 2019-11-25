@@ -1,11 +1,11 @@
 node('master') {
     stage('Clone') {
         echo 'Cloning...'
+        deleteDir()
         sh 'git clone --recurse-submodules -j4 https://github.com/MarcTestier/some_cmake_test'
     }
     stage('Build') {
         echo 'Building...'
-        deleteDir()
         sh '''
         cd some_cmake_test
         mkdir build
