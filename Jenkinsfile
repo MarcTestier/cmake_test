@@ -39,7 +39,6 @@ pipeline {
 			    echo 'Checking code coverage...'
                 sh '''\
                 cd build
-                touch coverage.xml
                 $HOME_PATH/.local/bin/gcovr -r .. --xml-pretty -o coverage.xml
                 '''
 			}        
