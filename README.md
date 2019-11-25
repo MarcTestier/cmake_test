@@ -49,7 +49,7 @@ TODO
 
 ## CI (Jenkins CI)
 
-Check the [Jenkinsfile](Jenkinsfile) in this repository and the [Jenkins CI server](http://hopermf-desktop.local:8080/job/cmake_package_pipeline/)(only accessible from local network at work).
+Check the [Jenkinsfile](Jenkinsfile) in this repository and the [Jenkins CI server](http://hopermf-desktop.local:8080/job/cmake_package_pipeline/) (only accessible from local network).
 
 ## Code coverage
 
