@@ -35,7 +35,7 @@ pipeline {
 			    echo 'Checking code coverage...'
                 sh '''\
                 cd build
-                gcovr -r .. --xml-pretty -o coverage.xml
+                gcovr -r .. --xml-pretty -o coverage.xml --gcov-exclude=test
                 '''
                 cobertura coberturaReportFile: 'build/coverage.xml'
 			}        
