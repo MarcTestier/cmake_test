@@ -24,8 +24,9 @@ node('master') {
     stage('Code coverage') {
         echo 'Checking code coverage...'
         sh '''
+        echo $PATH
         cd some_cmake_test/build
-        gcovr -r .. --xml-pretty
+        gcovr -r .. --xml-pretty -o code_coverage.xml
         '''
     }
     
