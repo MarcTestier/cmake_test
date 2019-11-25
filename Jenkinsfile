@@ -25,7 +25,7 @@ node('master') {
         echo 'Checking code coverage...'
         sh '''
         cd some_cmake_test/build
-        gcovr -r . --xml-pretty
+        gcovr -r .. --xml-pretty
         '''
     }
     
