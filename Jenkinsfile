@@ -15,12 +15,14 @@ pipeline {
 		stage('Build') {
 			steps {
 				echo 'Building...'
-                sh 'pwd'
-                sh 'mkdir build'
-                sh 'cd build'
-                sh 'pwd'
-                sh 'cmake -DBUILD_TESTING=ON ..'
-                sh 'make'
+                sh '''
+                pwd
+                mkdir build
+                cd build
+                pwd
+                cmake -DBUILD_TESTING=ON ..
+                make
+                '''
 			}
 		}
 		stage('Unit test') {
