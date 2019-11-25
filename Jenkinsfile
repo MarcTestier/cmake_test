@@ -8,22 +8,22 @@ pipeline {
     stages {
 		stage('Clone') {
 			steps {
-				echo 'I am executing stage 1'
+                echo 'Cloning...'
 			}
 		}
 		stage('Build') {
 			steps {
-				echo 'I am executing stage 2'
+				echo 'Building...'
 			}
 		}
-		stage('Test') {
+		stage('Unit test') {
 			steps {
-				echo "Running Stage Three"
+				echo 'Testing...'
 			}
 		}
 		stage('Code coverage') {       
 			steps {
-			    echo "Running another test job"
+			    echo 'Checking code coverage...'
 			}        
 		}
 	}
