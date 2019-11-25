@@ -15,6 +15,8 @@ pipeline {
 		stage('Build') {
 			steps {
 				echo 'Building...'
+                sh 'pwd'
+                sh 'ls'
                 sh 'cd some_cmake_test'
                 sh 'mkdir build'
                 sh 'cd build'
