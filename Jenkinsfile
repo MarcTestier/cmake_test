@@ -1,9 +1,5 @@
 pipeline {
 	agent any
-    
-    environment {
-        HOME_PATH = "/home/hopermf"
-    }
 
     stages {
 		stage('Clone') {
@@ -39,7 +35,7 @@ pipeline {
 			    echo 'Checking code coverage...'
                 sh '''\
                 cd build
-                $HOME_PATH/.local/bin/gcovr -r .. --xml-pretty -o coverage.xml
+                gcovr -r .. --xml-pretty -o coverage.xml
                 '''
 			}        
 		}
