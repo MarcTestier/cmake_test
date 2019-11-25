@@ -1,14 +1,14 @@
 pipeline {
 	agent any
 		stages {
-		stage('One') {
+		stage('Clone') {
 			steps {
 				echo 'I am executing stage 1'
 			}
 		}
 		stage('Two') {
 			steps {
-				input('In pipeline, We take decision. Can we proceed?')
+				echo 'I am executing stage 2'
 			}
 		}
 		stage('Three') {
@@ -18,7 +18,7 @@ pipeline {
 		}
 		stage('Four') {       
 			steps {
-			echo "Running another test job"
+			    echo "Running another test job"
 			}        
 		}
 	}
