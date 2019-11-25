@@ -15,8 +15,10 @@ pipeline {
 		stage('Build') {
 			steps {
 				echo 'Building...'
+                sh 'pwd'
                 sh 'mkdir build'
                 sh 'cd build'
+                sh 'pwd'
                 sh 'cmake -DBUILD_TESTING=ON ..'
                 sh 'make'
 			}
