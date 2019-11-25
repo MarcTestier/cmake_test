@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.5)
 
 # Adding code coverage
-# add_compile_options(-fprofile-arcs -ftest-coverage -g -O0)
+#add_compile_options(-fprofile-arcs -ftest-coverage -g -O0)
 
 # Adding unit tests
 file(GLOB_RECURSE unit_test_srcs "unit_test/*.cpp")

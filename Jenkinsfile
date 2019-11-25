@@ -10,7 +10,7 @@ node('master') {
         cd some_cmake_test
         mkdir build
         cd build
-        cmake -DBUILD_TESTING=ON -fprofile-arcs -ftest-coverage -g -O0 ..
+        cmake -DBUILD_TESTING=ON ..
         make
         '''
     }
