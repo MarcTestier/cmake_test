@@ -36,8 +36,8 @@ pipeline {
                 sh '''\
                 cd build
                 gcovr -r .. --xml-pretty -o coverage.xml
-                cobertura coberturaReportFile: 'coverage.xml'
                 '''
+                cobertura coberturaReportFile: 'build/coverage.xml'
 			}        
 		}
 	}
