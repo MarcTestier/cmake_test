@@ -14,7 +14,8 @@ node('master') {
     stage('Test') {
         echo 'Testing...'
         sh '''
-        cd test
+        ls
+        cd some_cmake_test/build/test
         ctest
         '''
     }
