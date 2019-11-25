@@ -1,22 +1,27 @@
 pipeline {
 	agent any
-		stages {
+    
+    environment {
+        HOME_PATH = "/home/hopermf"
+    }
+
+    stages {
 		stage('Clone') {
 			steps {
 				echo 'I am executing stage 1'
 			}
 		}
-		stage('Two') {
+		stage('Build') {
 			steps {
 				echo 'I am executing stage 2'
 			}
 		}
-		stage('Three') {
+		stage('Test') {
 			steps {
 				echo "Running Stage Three"
 			}
 		}
-		stage('Four') {       
+		stage('Code coverage') {       
 			steps {
 			    echo "Running another test job"
 			}        
