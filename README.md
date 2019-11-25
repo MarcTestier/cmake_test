@@ -49,10 +49,8 @@ TODO
 
 ## CI (Jenkins CI)
 
-### Jenkins
+Check the [Jenkinsfile](Jenkinsfile) in this repository and the [Jenkins CI server](http://hopermf-desktop.local:8080/job/cmake_package_pipeline/)(only accessible from local network at work).
 
-TODO
-
-### Code coverage
+## Code coverage
 
 TODO
