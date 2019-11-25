@@ -15,7 +15,7 @@ pipeline {
 		stage('Build') {
 			steps {
 				echo 'Building...'
-                sh '''
+                sh '''\
                 pwd
                 mkdir build
                 cd build
@@ -28,8 +28,10 @@ pipeline {
 		stage('Unit test') {
 			steps {
 				echo 'Testing...'
-                sh 'cd build/test'
-                sh 'ctest'
+                sh '''\
+                cd build/test
+                ctest
+                '''
 			}
 		}
 		stage('Code coverage') {       
