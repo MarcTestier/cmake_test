@@ -40,5 +40,14 @@ pipeline {
                 cobertura coberturaReportFile: 'build/coverage.xml'
 			}        
 		}
+		stage('Documentation') {       
+			steps {
+			    echo 'Generating documentation...'
+                sh '''\
+                cd documentation
+				doxygen doxygen.conf
+                '''
+			}        
+		}
 	}
 }

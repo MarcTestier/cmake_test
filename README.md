@@ -8,7 +8,7 @@ TODO
 
 ## Unit tests (Catch2)
 ### With colcon
-We'll source ROS 2 but we actually only need colcon which is ROS 2 independent, it's just easy to source the whole thing.
+We'll source ROS 2 but we actually only need colcon which is ROS 2 independent, it's just easier to source the whole thing and since colcon is most likely only used with ROS 2, it doesn't really matter if we source ROS 2.
 
 Source ROS 2 and build with tests:
 ```
@@ -41,7 +41,10 @@ TODO
 
 ## Documentation (Doxygen)
 
-TODO
+```
+cd documentation
+doxygen doxygen.conf
+```
 
 ## Logging (spdlog)
 
@@ -51,7 +54,7 @@ TODO
 
 Check the [Jenkinsfile](Jenkinsfile) in this repository and the [Jenkins CI server](http://hopermf-desktop.local:8080/job/cmake_package_pipeline/) (only accessible from local network).
 
-## Code coverage
+## Code coverage (gcovr)
 
 ```
 sudo -H pip install gcovr
