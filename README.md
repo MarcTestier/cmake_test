@@ -18,7 +18,7 @@ colcon build --cmake-args -DBUILD_TESTING=ON
 
 Go run the tests:
 ```
-cd <my_ws>/build/some_cmake_test/test
+cd <my_package>/build/some_cmake_test/test
 ctest
 ```
 
@@ -41,10 +41,19 @@ TODO
 
 ## Documentation (Doxygen)
 
+Install doxygen on your system:
 ```
-cd documentation
+sudo apt install doxygen
+```
+
+Generate the documentation:
+```
+cd <my_package>/documentation
 doxygen doxygen.conf
 ```
+
+Check the generated documentation by opening `html/index.html` in your browser.
+
 
 ## Logging (spdlog)
 
@@ -56,6 +65,20 @@ Check the [Jenkinsfile](Jenkinsfile) in this repository and the [Jenkins CI serv
 
 ## Code coverage (gcovr)
 
+
+Install gcovr on your system:
 ```
 sudo -H pip install gcovr
+```
+
+Generate the code coverage data as html:
+```
+cd build
+gcovr -r .. --exclude-directories 'test' --html-details -o coverage.html 
+```
+
+Or generate the code coverage data as XML:
+```
+cd build
+gcovr -r .. --exclude-directories 'test' --xml-pretty -o coverage.xml 
 ```
