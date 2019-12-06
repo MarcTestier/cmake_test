@@ -60,7 +60,7 @@ Check the generated documentation by opening `html/index.html` in your browser.
 
 ## Logging (spdlog)
 
-(spdlog)[https://github.com/gabime/spdlog] is the logger used for our system. It is added as a git submodule in `external_tools`.
+[spdlog](https://github.com/gabime/spdlog) is the logger used for our system. It is added as a git submodule in `external_tools`.
 
 ## CI (Jenkins CI)
 
