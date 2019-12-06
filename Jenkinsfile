@@ -27,7 +27,7 @@ pipeline {
 				echo 'Using cppcheck...'
                 sh '''\
                 cd build
-				cppcheck --enable=all --inconclusive --config-exclude=../external_tools/ --suppress=*:*external_tools\* -I ../external_tools/spdlog/include -I ../include/ --suppress=missingIncludeSystem --xml --xml-version=2 ../src/ 2> cppcheck.xml
+				cppcheck --enable=all --inconclusive --config-exclude=../external_tools/ --suppress=*:*external_tools\\* -I ../external_tools/spdlog/include -I ../include/ --suppress=missingIncludeSystem --xml --xml-version=2 ../src/ 2> cppcheck.xml
                 '''
 			}
 		}
