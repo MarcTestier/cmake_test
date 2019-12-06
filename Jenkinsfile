@@ -35,7 +35,8 @@ pipeline {
 			    echo 'Checking code coverage...'
                 sh '''\
                 cd build
-				gcovr -r .. --filter '\\.\\./src/' --filter '\\.\\./include/' --xml-pretty -o coverage.xml 
+				mkdir coverage
+				gcovr -r .. --filter '\\.\\./src/' --filter '\\.\\./include/' --xml-pretty -o coverage/coverage.xml 
                 '''
                 cobertura coberturaReportFile: 'build/coverage.xml'
 			}        

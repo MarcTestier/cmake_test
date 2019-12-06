@@ -2,36 +2,40 @@
 
 A small compilation of static analysis tools, unit test, fuzzing, documentation and logging tools linked to a CI server.
 
-## Static analysis (cppcheck, cpplint)
+## How to build
+### With CMake
 
-TODO
-
-## Unit tests (Catch2)
-### With colcon
-We'll source ROS 2 but we actually only need colcon which is ROS 2 independent, it's just easier to source the whole thing and since colcon is most likely only used with ROS 2, it doesn't really matter if we source ROS 2.
-
-Source ROS 2 and build with tests:
-```
-source /opt/ros/dashing/setup.bash
-colcon build --cmake-args -DBUILD_TESTING=ON
-```
-
-Go run the tests:
-```
-cd <my_package>/build/some_cmake_test/test
-ctest --output-on-failure
-```
-
-### With pure CMake
-
-Should work with cmake, something like:
+Build using CMake with:
 ```
 cd <my_package>
 mkdir build
 cd build
 cmake -DBUILD_TESTING=ON ..
 make
-cd test
+```
+
+### With ROS 2 colcon
+
+You'll need to have [ROS 2](https://index.ros.org/doc/ros2/) installed.
+Then source ROS 2, we actually only need colcon which is ROS 2 independent, it's just easier to source the whole thing and since colcon is most likely only used with ROS 2, it doesn't really matter if we source ROS 2.
+
+Source ROS 2 and build with tests with:
+```
+source /opt/ros/<my_ros_distro>/setup.bash
+colcon build --cmake-args -DBUILD_TESTING=ON
+```
+
+## Static analysis (cppcheck, cpplint)
+
+TODO
+
+## Unit tests (Catch2)
+
+[Catch2](https://github.com/catchorg/Catch2) is added as a git submodule in `test\external_tools` and is used for unit testing.
+
+After building, run the tests with:
+```
+cd <my_package>/build/some_cmake_test/test
 ctest --output-on-failure
 ```
 
@@ -41,12 +45,12 @@ TODO
 
 ## Documentation (Doxygen)
 
-Install doxygen on your system:
+Install [doxygen](http://www.doxygen.nl/) on your system with:
 ```
 sudo apt install doxygen
 ```
 
-Generate the documentation:
+Generate the documentation with:
 ```
 cd <my_package>/documentation
 doxygen doxygen.conf
@@ -54,10 +58,9 @@ doxygen doxygen.conf
 
 Check the generated documentation by opening `html/index.html` in your browser.
 
-
 ## Logging (spdlog)
 
-TODO
+(spdlog)[https://github.com/gabime/spdlog] is the logger used for our system. It is added as a git submodule in `external_tools`.
 
 ## CI (Jenkins CI)
 
@@ -66,21 +69,21 @@ Check the [Jenkinsfile](Jenkinsfile) in this repository and the [Jenkins CI serv
 ## Code coverage (gcovr)
 
 
-Install gcovr on your system:
+Install gcovr on your system with:
 ```
 sudo -H pip install gcovr
 ```
 
-TODO: fix coverage with external tools (spdlog)
-Generate the code coverage data as html:
+Generate the code coverage data as html with:
 ```
 cd build
 mkdir coverage
 gcovr -r .. --filter '\.\./src/' --filter '\.\./include/' --html-details -o coverage/coverage.html 
 ```
 
-Or generate the code coverage data as XML:
+Or generate the code coverage data as XML with:
 ```
 cd build
-gcovr -r .. --filter '\.\./src/' --filter '\.\./include/' --xml-pretty -o coverage.xml 
+mkdir coverage
+gcovr -r .. --filter '\.\./src/' --filter '\.\./include/' --xml-pretty -o coverage/coverage.xml 
 ```
