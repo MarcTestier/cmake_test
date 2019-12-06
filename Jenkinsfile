@@ -38,7 +38,7 @@ pipeline {
 				mkdir coverage
 				gcovr -r .. --filter '\\.\\./src/' --filter '\\.\\./include/' --xml-pretty -o coverage/coverage.xml 
                 '''
-                cobertura coberturaReportFile: 'build/coverage.xml'
+                cobertura coberturaReportFile: 'build/coverage/coverage.xml'
 			}        
 		}
 		stage('Documentation') {       

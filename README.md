@@ -68,7 +68,6 @@ Check the [Jenkinsfile](Jenkinsfile) in this repository and the [Jenkins CI serv
 
 ## Code coverage (gcovr)
 
-
 Install gcovr on your system with:
 ```
 sudo -H pip install gcovr
