@@ -13,15 +13,9 @@ endif()
 # Adding spdlog
 add_subdirectory(external_tools/spdlog)
 
+# Adding code coverage
 if(BUILD_TESTING)
-    # Adding code coverage
     add_compile_options(-fprofile-arcs -ftest-coverage -g -O0)
-endif()
-
-
-if(NOT TARGET spdlog)
-    # Stand-alone build
-    find_package(spdlog REQUIRED)
 endif()
 
 include_directories(include ${INCLUDE_DIRS})
