@@ -13,6 +13,8 @@
 
 #include <iostream>
 #include <string>
+#include "spdlog/spdlog.h"
+#include "spdlog/sinks/basic_file_sink.h"
 
 /**
  * @brief Some class on which tests and other tools are applied

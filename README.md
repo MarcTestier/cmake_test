@@ -19,7 +19,7 @@ colcon build --cmake-args -DBUILD_TESTING=ON
 Go run the tests:
 ```
 cd <my_package>/build/some_cmake_test/test
-ctest
+ctest --output-on-failure
 ```
 
 ### With pure CMake
@@ -32,7 +32,7 @@ cd build
 cmake -DBUILD_TESTING=ON ..
 make
 cd test
-ctest
+ctest --output-on-failure
 ```
 
 ## Fuzzing (?)
@@ -71,14 +71,16 @@ Install gcovr on your system:
 sudo -H pip install gcovr
 ```
 
+TODO: fix coverage with external tools (spdlog)
 Generate the code coverage data as html:
 ```
 cd build
-gcovr -r .. --exclude-directories 'test' --html-details -o coverage.html 
+mkdir coverage
+gcovr -r .. --filter '\.\./src/' --filter '\.\./include/' --html-details -o coverage/coverage.html 
 ```
 
 Or generate the code coverage data as XML:
 ```
 cd build
-gcovr -r .. --exclude-directories 'test' --xml-pretty -o coverage.xml 
+gcovr -r .. --filter '\.\./src/' --filter '\.\./include/' --xml-pretty -o coverage.xml 
 ```

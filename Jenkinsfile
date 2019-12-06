@@ -26,7 +26,7 @@ pipeline {
 				echo 'Testing...'
                 sh '''\
                 cd build/test
-                ctest
+                ctest --output-on-failure
                 '''
 			}
 		}
@@ -35,7 +35,7 @@ pipeline {
 			    echo 'Checking code coverage...'
                 sh '''\
                 cd build
-				gcovr -r .. --exclude-directories 'test' --xml-pretty -o coverage.xml 
+				gcovr -r .. --filter '\.\./src/' --filter '\.\./include/' --xml-pretty -o coverage.xml 
                 '''
                 cobertura coberturaReportFile: 'build/coverage.xml'
 			}        
