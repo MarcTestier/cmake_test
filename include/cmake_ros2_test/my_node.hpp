@@ -21,20 +21,20 @@
  * 
  */
 class MyNode {
-    public:
-        /**
-         * @brief Construct a new MyNode object
-         * 
-         */
-        MyNode();
+public:
+    /**
+     * @brief Construct a new MyNode object
+     * 
+     */
+    MyNode();
 
-        /**
-         * @brief Fibonacci function to test
-         * 
-         * @param some_val 
-         * @return int 
-         */
-        int doStuff(int some_val);
+    /**
+     * @brief Fibonacci function to test
+     * 
+     * @param some_val 
+     * @return int 
+     */
+    int doStuff(int some_val);
 };
 
 

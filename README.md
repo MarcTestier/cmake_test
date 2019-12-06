@@ -3,7 +3,6 @@
 A small compilation of static analysis tools, unit test, fuzzing, documentation and logging tools linked to a CI server.
 
 ## How to build
-### With CMake
 
 Build using CMake with:
 ```
@@ -14,20 +13,12 @@ cmake -DBUILD_TESTING=ON ..
 make
 ```
 
-### With ROS 2 colcon
-
-You'll need to have [ROS 2](https://index.ros.org/doc/ros2/) installed.
-Then source ROS 2, we actually only need colcon which is ROS 2 independent, it's just easier to source the whole thing and since colcon is most likely only used with ROS 2, it doesn't really matter if we source ROS 2.
-
-Source ROS 2 and build with tests with:
-```
-source /opt/ros/<my_ros_distro>/setup.bash
-colcon build --cmake-args -DBUILD_TESTING=ON
-```
-
 ## Static analysis (cppcheck, cpplint)
 
 TODO
+```
+cppcheck --xml --xml-version=2 .. 2> cppcheck.xml
+```
 
 ## Unit tests (Catch2)
 
