@@ -31,10 +31,6 @@ cd <my_package>/build/some_cmake_test/test
 ctest --output-on-failure
 ```
 
-## Fuzzing (?)
-
-TODO
-
 ## Documentation (Doxygen)
 
 Install [doxygen](http://www.doxygen.nl/) on your system with:
