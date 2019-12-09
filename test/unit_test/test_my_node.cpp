@@ -1,9 +1,10 @@
 #include "cmake_ros2_test/my_node.hpp"
 #include <catch2/catch.hpp>
 
-// Purposely not covering all cases to test coverage tools
 TEST_CASE( "My own tests", "[my-own-tests]" ) {
     MyNode my_node = MyNode();
+    REQUIRE( my_node.doStuff(-5) == 0 );
+    REQUIRE( my_node.doStuff(0) == 1 );
     REQUIRE( my_node.doStuff(1) == 1 );
     REQUIRE( my_node.doStuff(2) == 3 );
     REQUIRE( my_node.doStuff(3) == 6 );
