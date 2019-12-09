@@ -13,12 +13,13 @@ cmake -DBUILD_TESTING=ON ..
 make
 ```
 
-## Static analysis (cppcheck, cpplint)
+## Static analysis (cppcheck)
 
-TODO
-```
-cppcheck --xml --xml-version=2 .. 2> cppcheck.xml
-```
+Install [cppcheck](http://cppcheck.sourceforge.net/) and run with:
+'''
+cd <my_package>/build
+cppcheck --enable=all --inconclusive --config-exclude=../external_tools/ --suppress=*:*external_tools\\* -I ../external_tools/spdlog/include -I ../include/ --suppress=missingIncludeSystem --xml --xml-version=2 ../src/ 2> cppcheck.xml
+'''
 
 ## Unit tests (Catch2)
 
